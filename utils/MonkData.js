@@ -1,47 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="imgg"
-          src="https://www.shutterstock.com/image-vector/fast-delivery-logo-icon-design-600w-1708549753.jpg"
-        />
-      </div>
-      <div className="Nav-lists">
-        <ul>
-          <li>Help</li>
-          <li>About</li>
-          <li>Feedback</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestroCard = (props) => {
-  const { resData } = props;
-  const { name, cuisines, avgRating, sla, costForTwo } = resData?.info;
-  return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0 " }}>
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.info.cloudinaryImageId
-        }
-      />
-      <h2>{name}</h2>
-      <h4>{cuisines.join(" ,")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{sla.deliveryTime} minutes</h4>
-      <h4>{costForTwo}</h4>
-    </div>
-  );
-};
 const resList = [
   {
     info: {
@@ -1542,29 +1498,4 @@ const resList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">
-        <button type="button"> search</button>
-      </div>
-      <div className="res-container">
-        {resList.map((restorant) => (
-          <RestroCard key={restorant.info.id} resData={restorant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
