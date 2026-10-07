@@ -1,4 +1,4 @@
-import { CON_URL } from "../utils/constants";
+import { CON_URL } from "./components/constants";
 
 const RestroCard = (props) => {
   const { resData } = props;
